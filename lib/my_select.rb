@@ -1,6 +1,12 @@
-def my_select(collection)
-collection.select do |x|
-  x << yield{collection[i]}
+def my_select(array) 
+count = 0
+result = []
+
+while count < array.size
+  if yield(array[count]) == true
+  result.push(array[count])
 end
-collection
+  count+=1
+end
+result
 end
